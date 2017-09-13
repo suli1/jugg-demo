@@ -1,0 +1,48 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+  repositories {
+    jcenter()
+    maven() {
+      //            url uri("../repo")
+      url uri("/Users/suli690/work/pingan/code/jugg-android/repo")
+    }
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:2.3.3'
+
+    // NOTE: Do not place your application dependencies here; they belong
+    // in the individual module build.gradle files
+
+    //        classpath 'net.wequick.tools.build:gradle-small:1.2.0-alpha6-t'
+    classpath 'com.paem.jugg.gradle:jugg-gradle:1.0.1'
+  }
+}
+
+allprojects {
+  repositories {
+    jcenter()
+  }
+}
+
+task clean(type: Delete) {
+  delete rootProject.buildDir
+}
+
+//apply plugin: 'net.wequick.small'
+apply plugin: 'jugg-root-plugin'
+
+small {
+  buildToAssets false
+  android {
+    compileSdkVersion = 25
+    buildToolsVersion = '25.0.2'
+    supportVersion = '25.3.1'
+  }
+}
+
+tasks.whenTaskAdded { task ->
+  if (task.name.contains('test') || task.name.contains('Test')) {
+    task.enabled false
+  }
+}
