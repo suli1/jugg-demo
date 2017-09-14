@@ -1,1 +1,1 @@
-include ':app', ':lib.utils', ':app.home'
+include ':app', ':lib.utils', ':app.home', ':lib.style'

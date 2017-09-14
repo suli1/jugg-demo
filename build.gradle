@@ -32,12 +32,12 @@ task clean(type: Delete) {
 apply plugin: 'jugg-root-plugin'
 
 small {
-  buildToAssets false
   android {
     compileSdkVersion = 25
     buildToolsVersion = '25.0.2'
     supportVersion = '25.3.1'
   }
+  strictSplitResources = false
 }
 
 tasks.whenTaskAdded { task ->
