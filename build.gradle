@@ -5,6 +5,7 @@ buildscript {
     jcenter()
     maven() {
       url uri("../repo")
+//      url uri("/Users/suli690/work/pingan/code/jugg-android/repo")
     }
   }
   dependencies {
@@ -14,7 +15,7 @@ buildscript {
     // in the individual module build.gradle files
 
     //        classpath 'net.wequick.tools.build:gradle-small:1.2.0-alpha6-t'
-    classpath 'com.paem.jugg.gradle:jugg-gradle:1.0.1'
+    classpath 'com.paem.jugg.gradle:jugg-gradle:1.0.2'
   }
 }
 
@@ -28,7 +29,6 @@ task clean(type: Delete) {
   delete rootProject.buildDir
 }
 
-//apply plugin: 'net.wequick.small'
 apply plugin: 'jugg-root-plugin'
 
 small {
