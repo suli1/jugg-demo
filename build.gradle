@@ -4,8 +4,7 @@ buildscript {
   repositories {
     jcenter()
     maven() {
-      url uri("../repo")
-//      url uri("/Users/suli690/work/pingan/code/jugg-android/repo")
+      url uri('/Users/suli690/repo')
     }
   }
   dependencies {
